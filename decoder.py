@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 def interpreter(x):
-   dict={'%':'q','\\':'w','|':'e','=':'r','[':'t',']':'y','<':'u','>':'i','{':'o','}':'p','@':'a','#':'s','$':'d','_':'f','&':'g','-':'h','+':'j','(':'k',')':'l','*':'z','"':'x',"'":'c',':':'v',';':'b','!':'n','?':'m'}
+   dict={'%':'q','\\':'w','|':'e','=':'r','[':'t',']':'y','<':'u','>':'i','{':'o','}':'p','@':'a','#':'s','$':'d','_':'f','&':'g','-':'h','+':'j','(':'k',')':'l','*':'z','"':'x',"'":'c',':':'v',';':'b','!':'n','?':'m'," ":" "}
    if x == None:
        return "error404:no arguments found!"
    for key, value in dict.items():
@@ -9,10 +9,6 @@ def interpreter(x):
    return x
 
 if __name__ == "__main__":
-	import argparse
-	parser=argparse.ArgumentParser(description="interprets somethings")
-	parser.add_argument("-i","--inter",help="-i <toInterpret>")
-	args=parser.parse_args()
-	inter=args.inter
+	inter=input("enter encoded message:")
 	x=interpreter(inter)
 	print(x)
