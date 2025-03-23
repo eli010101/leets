@@ -2,10 +2,11 @@
 
 def interpreter(x):
    dict={'%':'q','\\':'w','|':'e','=':'r','[':'t',']':'y','<':'u','>':'i','{':'o','}':'p','@':'a','#':'s','$':'d','_':'f','&':'g','-':'h','+':'j','(':'k',')':'l','*':'z','"':'x',"'":'c',':':'v',';':'b','!':'n','?':'m'}
-
+   if x == None:
+       return "error404:no arguments found!"
    for key, value in dict.items():
         x = x.replace(key, value)
-    return x
+   return x
 
 if __name__ == "__main__":
 	import argparse
@@ -13,4 +14,5 @@ if __name__ == "__main__":
 	parser.add_argument("-i","--inter",help="-i <toInterpret>")
 	args=parser.parse_args()
 	inter=args.inter
-	interpreter(inter)
+	x=interpreter(inter)
+	print(x)
